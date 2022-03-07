@@ -84,8 +84,8 @@ console.table(cheapest);
 // 2. Log the list
 
 
-// 🎯 TODO: Average Basket
-// 1. Determine the average basket of the marketplace
+// 🎯 TODO: Average price
+// 1. Determine the average price of the marketplace
 // 2. Log the average
 
 
