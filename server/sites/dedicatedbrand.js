@@ -3,9 +3,9 @@ const cheerio = require('cheerio');
 const {'v5': uuidv5} = require('uuid');
 
 /**
- * Parse webpage restaurant
+ * Parse webpage e-shop
  * @param  {String} data - html response
- * @return {Object} restaurant
+ * @return {Array} products
  */
 const parse = data => {
   const $ = cheerio.load(data);
@@ -16,23 +16,24 @@ const parse = data => {
         .find('.productList-link')
         .attr('href')}`;
 
-      return {
-        link,
-        'brand': 'dedicated',
-        'price': parseInt(
-          $(element)
-            .find('.productList-price')
-            .text()
-        ),
-        'name': $(element)
-          .find('.productList-title')
+      const name = $(element)
+        .find('.productList-title')
+        .text()
+        .trim()
+        .replace(/\s/g, ' ');
+
+      const price = parseInt(
+        $(element)
+          .find('.productList-price')
           .text()
-          .trim()
-          .replace(/\s/g, ' '),
-        'photo': $(element)
-          .find('.productList-image img')
-          .attr('src'),
-        '_id': uuidv5(link, uuidv5.URL)
+      );
+
+      return {
+        'name' : name, 
+        'price' : price,
+        'brand' : 'dedicated',
+        'link' : link,
+        '_id' : uuidv5(link, uuidv5.URL)
       };
     })
     .get();
