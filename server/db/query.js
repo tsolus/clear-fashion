@@ -19,7 +19,6 @@ async function Close(){
 module.exports.Close = Close;
 
 async function query_brand(brand_name){
-    //var dbo = await db.db(MONGODB_DB_NAME);
     var oui = await db.collection("products").find({brand : brand_name}).toArray();
     console.log(oui);
 }

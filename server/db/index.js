@@ -24,9 +24,7 @@ async function Close(){
 async function InsertProduct(){ 
     await db.createCollection("products");
     const collection = await db.collection('products');
-    //console.log(typeof(products));
     const result = await collection.insertMany(products);
-    //console.log(result);
 }
 async function main(){
     await Connect();
