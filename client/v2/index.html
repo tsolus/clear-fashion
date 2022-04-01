@@ -5,7 +5,7 @@
     <title>👕 Clear Fahion | Environmentally & human-friendly clothes</title>
   </head>
   <body>
-    <h1>Clear fashion</h1>
+    <h1>Clear Fashion</h1>
     <section id="options">
       <div id="show">
         <label for="show-select">Show:</label>
@@ -20,8 +20,27 @@
         <select name="page" id="page-select"> </select>
       </div>
       <div id="filters">
-        <span>By reasonable price</span>
-        <span>By recently released</span>
+        <div id="reasonable">
+          <label for='reasonable-select'>Reasonable price ? :</label>
+          <select name="reasonable" id="reasonable-select">
+            <option value="no">NO</option>
+            <option value="yes">YES</option>
+          </select>
+        </div>
+        <div id="recent">
+          <label for='recent-select'>Recent products ? :</label>
+          <select name="recent" id="recent-select">
+            <option value="no">NO</option>
+            <option value="yes">YES</option>
+          </select>
+        </div>
+        <div id="favorite">
+          <label for='favorite-select'>Favorite products ? :</label>
+          <select name="favorite" id="favorite-select">
+            <option value="no">NO</option>
+            <option value="yes">YES</option>
+          </select>
+        </div>
         <div id="brand">
           <label for="brand-select">By brands:</label>
           <select name="brand" id="brand-select"> </select>
@@ -30,6 +49,7 @@
       <div id="sort">
         <label for="sort-select">Sort:</label>
         <select name="sort" id="sort-select">
+          <option value="notSorted">-</option>
           <option value="price-asc">Cheaper</option>
           <option value="price-desc">Expensive</option>
           <option value="date-asc">Recently released</option>
@@ -45,26 +65,29 @@
       </div>
       <div>
         <span>Number of new products</span>
-        <span>0</span>
+        <span id="nbNewProducts">0</span>
       </div>
       <div>
         <span>p50 price value</span>
-        <span>0</span>
+        <span id="p50">0</span>
       </div>
       <div>
         <span>p90 price value</span>
-        <span>0</span>
+        <span id="p90">0</span>
       </div>
       <div>
         <span>p95 price value</span>
-        <span>0</span>
+        <span id="p95">0</span>
       </div>
       <div>
         <span>Last released date</span>
-        <span>2020-01-01</span>
+        <span id="last_release">2020-01-01</span>
       </div>
     </section>
     <section id="products"></section>
     <script type="text/javascript" charset="UTF-8" src="portfolio.js"></script>
   </body>
+  <footer>
+    <a href="https://github.com/tsolus/clear-fashion">Copyright Tristan Solus</a>
+  </footer>
 </html>
